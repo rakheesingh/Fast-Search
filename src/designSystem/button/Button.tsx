@@ -36,7 +36,7 @@ export default function Button({
         //   common for all variants
         "px-2.5 py-3 text-base items-center justify-center flex rounded disabled:opacity-30 disabled:cursor-not-allowed",
         {
-          "bg-brand-blue-1 text-white font-medium hover:bg-brand-blue-2 active:bg-brand-blue-3 ":
+          "bg-blue-600 text-white font-medium hover:bg-blue-400 bg-brand" :
             variant === "primary",
         },
         {
