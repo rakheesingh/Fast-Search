@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { TextBase, TextSM } from "../../designSystem/typography/Typography";
+import { TextBase } from "../../designSystem/typography/Typography";
 import { InputContext } from "./Search";
 import { useClickOutside } from "../../hooks/useClickOutside";
 import { isEmpty } from "../../helper";
@@ -38,25 +38,24 @@ export default function SearchSuggestion({
       {Object.keys(suggestionWithCategory).map(
         (suggestionCriteria, categoryIndex) => (
           <div key={categoryIndex} className="py-1">
-            <TextBase textColor="text-gray-900" className="mb-2 font-semibold flex items-center">
-              Showing suggestions based on:
-              <TextSM textColor="text-red-500" className="ml-1">
-                {suggestionCriteria}
-              </TextSM>
+          <TextBase textColor="text-gray-900" className="mb-2 font-semibold text-lg flex items-center">
+            Showing suggestions based on:
+            <TextBase textColor="text-gray-600" className="ml-1 text-base">
+              {suggestionCriteria}
             </TextBase>
-            <ul className="space-y-1" role="listbox">
-              {suggestionWithCategory[suggestionCriteria].map(
-                (suggestion: string, index: number) => (
-                  <li key={index} className="hover:bg-gray-100 rounded-md p-1 cursor-pointer">
-                    <SuggestionItem
-                      suggestion={suggestion}
-                      clickSuggestion={() => selectSuggestion(suggestion)}
-                    />
-                  </li>
-                )
-              )}
-            </ul>
-          </div>
+          </TextBase>
+          <ul className="space-y-1" role="listbox">
+            {suggestionWithCategory[suggestionCriteria].map(
+              (suggestion: string, index: number) => (
+                <SuggestionItem
+                  key={index}
+                  suggestion={suggestion}
+                  clickSuggestion={() => selectSuggestion(suggestion)}
+                />
+              )
+            )}
+          </ul>
+        </div>        
         )
       )}
     </div>

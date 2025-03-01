@@ -9,7 +9,7 @@ export default function SuggestionItem({
   return (
     <li
       role="option"
-      className="px-3 py-1 rounded hover:bg-gray-100 cursor-pointer transition-colors duration-150"
+      className="hover:bg-gray-100 rounded-md p-1 cursor-pointer"
       onClick={clickSuggestion}
     >
       {suggestion}
