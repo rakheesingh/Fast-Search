@@ -30,8 +30,7 @@ export default function SearchInput({
   };
 
   return (
-    <div className="flex gap-2 items-start">
-      <div className="w-full">
+    <div className="flex gap-2 items-start w-full my-10">
         <Input
           placeholder="Search content on basis of name here..."
           value={searchInputQuery}
@@ -40,7 +39,6 @@ export default function SearchInput({
           data-testid="textbox"
           role="textbox"
         />
-      </div>
       <Button
         variant="primary"
         className="rounded-lg"

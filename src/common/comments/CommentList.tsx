@@ -1,3 +1,4 @@
+import { TextBase, TextSM } from "../../designSystem/typography/Typography";
 import { CommentEntity } from "../../types/comment";
 
 interface CommentListProps {
@@ -11,12 +12,15 @@ export default function CommentList({ comments }: CommentListProps) {
     };
   
     return (
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-6 w-full my-8">
         {comments.map((comment) => (
-          <div key={comment.id} className="border border-slate-700 rounded-md p-2" >
-            <h3>{comment.name}</h3>
-            <p style={{ fontStyle: "italic", color: "#555" }}>{comment.email}</p>
-            <p>{truncateBody(comment.body)}</p>
+          <div key={comment.id} className="border border-blue-500 rounded-lg py-3 px-6" >
+            <div className="flex justify-between">
+              <TextBase textColor="text-slate-700">{comment.name}</TextBase>
+              <TextSM textColor="text-blue-600">{comment.email}</TextSM>
+            </div>
+
+            <TextSM textColor="text-slate-500">{truncateBody(comment.body)}</TextSM>
           </div>
         ))}
       </div>

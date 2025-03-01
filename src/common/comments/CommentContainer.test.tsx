@@ -1,6 +1,7 @@
-import CommentContainer, { ERROR } from "./CommentContainer";
+import CommentContainer from "./CommentContainer";
 import { render, waitFor, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
+import { ERROR } from "./constant";
 
 describe("CommentContainer", () => {
   beforeEach(() => {

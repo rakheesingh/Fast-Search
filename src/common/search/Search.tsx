@@ -18,6 +18,7 @@ export function Search({ handleSearch, searchAPIsByCriteria }: SearchProps) {
   const populateSearchSuggestions = async (searchQuery: string) => {
     if(searchQuery === "") {
         clearSuggestions();
+        handleSearch(searchQuery);
         return;
     }
     const searchSuggestionByQuery: { [key: string]: unknown } = {};

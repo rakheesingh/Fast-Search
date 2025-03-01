@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Search from "../../common/search/Search";
-import CommentContainer from "../../common/list/CommentContainer";
+import CommentContainer from "../../common/comments/CommentContainer";
 
-const SEARCH_CRITERIA = [
+ const SEARCH_CRITERIA = [
   {
     query: "name_like",
     name: "name",
@@ -21,12 +21,12 @@ export default function Comments() {
     setQuery(query)
   };
   return (
-    <div className="px-20 ">
+    <div className="px-40">
       <Search
         handleSearch={handleSearch}
         searchAPIsByCriteria={SEARCH_CRITERIA}
       />
-      <CommentContainer query={query}/>
+      <CommentContainer query={query} />
     </div>
   );
 }
