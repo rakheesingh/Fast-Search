@@ -1,6 +1,7 @@
 // Button.test.tsx
 import { render, fireEvent } from "@testing-library/react";
 import Button from "./Button";
+import "@testing-library/jest-dom";
 
 describe("Button component", () => {
   it("renders the button with children", () => {

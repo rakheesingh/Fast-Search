@@ -17,6 +17,7 @@ export default function Button({
   loading,
   onClick,
   disabled,
+  ...props
 }: ButtonProps) {
 
 
@@ -49,6 +50,7 @@ export default function Button({
         },
         className
       )}
+      {...props}
     >
       {children}
     </button>

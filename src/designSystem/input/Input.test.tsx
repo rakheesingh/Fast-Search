@@ -1,5 +1,6 @@
 import { render, fireEvent } from "@testing-library/react";
 import Input from "./Input"; // adjust the import path as needed
+import "@testing-library/jest-dom";
 
 describe("Input Component", () => {
   it("renders with the correct placeholder and value", () => {
