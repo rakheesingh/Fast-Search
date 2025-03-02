@@ -44,11 +44,16 @@ export function Search({ handleSearch, searchAPIsByCriteria }: SearchProps) {
     setSearchSuggestionsByCategory({});
     closeSuggestionList();
   }
+  
+  const performSearch = (query: string) => {
+    handleSearch(query);
+    clearSuggestions();
+  }
 
   return (
     <div className="relative">
       <SearchInput
-        performSearch={handleSearch}
+        performSearch={performSearch}
         populateSearchSuggestions={populateSearchSuggestions}
         clearQuery={clearQuery}
       />
@@ -56,7 +61,7 @@ export function Search({ handleSearch, searchAPIsByCriteria }: SearchProps) {
         open={openSuggestionDropdown}
         closeSuggestionList={closeSuggestionList}
         suggestionWithCategory={searchSuggestionsByCategory}
-        performSearch={handleSearch}
+        performSearch={performSearch}
       />
     </div>
   );

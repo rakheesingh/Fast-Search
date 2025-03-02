@@ -18,7 +18,8 @@ export default function SearchInput({
   populateSearchSuggestions,
   clearQuery,
 }: SearchInputProps) {
-  const { searchInputQuery, setSearchInputQuery } = useContext<InputContextProps>(InputContext);
+  const { searchInputQuery, setSearchInputQuery } =
+    useContext<InputContextProps>(InputContext);
   const debouncedFunction = useDebounce(populateSearchSuggestions, 400);
   const [submitRef] = useKeyListenerRef(onKeyEnter);
 
@@ -37,13 +38,14 @@ export default function SearchInput({
   function onKeyEnter(event: KeyboardEvent) {
     event.stopPropagation();
     event.preventDefault();
+    console.log("event data", event.key);
     if (event.key === "Enter") {
       performSearch(searchInputQuery);
     }
   }
 
   return (
-    <div className="flex gap-2 items-start w-full my-10">
+    <div className="flex gap-2 items-start w-full my-10" ref={submitRef}>
       <Input
         placeholder="Search content on basis of name here..."
         value={searchInputQuery}
@@ -57,7 +59,6 @@ export default function SearchInput({
         className="rounded-lg"
         onClick={fetchDataOnSubmit}
         data-testid="submitButton"
-        ref={submitRef}
       >
         Search
       </Button>
