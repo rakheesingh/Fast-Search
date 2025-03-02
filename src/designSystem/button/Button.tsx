@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import React from "react";
+import React, { Ref } from "react";
 
 interface ButtonProps {
   className?: string;
@@ -8,6 +8,7 @@ interface ButtonProps {
   onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
   loading?: boolean;
   disabled?: boolean;
+  ref?: Ref<HTMLButtonElement>;
 }
 
 export default function Button({
@@ -17,6 +18,7 @@ export default function Button({
   loading,
   onClick,
   disabled,
+  ref,
   ...props
 }: ButtonProps) {
 
@@ -33,6 +35,7 @@ export default function Button({
     <button
       onClick={handleClick}
       disabled={disabled || loading}
+      ref={ref}
       className={classNames(
         //   common for all variants
         "px-2.5 py-3 text-base items-center justify-center flex rounded disabled:opacity-30 disabled:cursor-not-allowed",
