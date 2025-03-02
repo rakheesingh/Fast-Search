@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import CommentList from "./CommentList";
-import { CommentEntity } from "../../types/comment";
+import { CommentEntity } from "../../utils/types/comment";
 import ErrorComponent from "../errorScreen/ErrorWithMessage";
 import { ERROR, limit, NO_DATA } from "./utils/constant";
 import { fetchComment } from "./utils/netwrok";

@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { TextBase } from "../../designSystem/typography/Typography";
 import { InputContext } from "./Search";
-import { useClickOutside } from "../../hooks/useClickOutside";
-import { isEmpty } from "../../helper";
+import { useClickOutside } from "../../utils/hooks/useClickOutside";
+import { isEmpty } from "../../utils/helper";
 import SuggestionItem from "./SuggestionItem";
 
 interface SuggestionListProps {

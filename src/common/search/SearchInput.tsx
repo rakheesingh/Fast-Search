@@ -2,8 +2,8 @@ import { useContext } from "react";
 import Input from "../../designSystem/input/Input";
 import Button from "../../designSystem/button/Button";
 import { InputContext } from "./Search";
-import { InputContextProps } from "../../types/input";
-import useDebounce from "../../hooks/useDebounce";
+import { InputContextProps } from "../../utils/types/input";
+import useDebounce from "../../utils/hooks/useDebounce";
 
 const DEFAULT_INPUT_LIMIT = 3;
 interface SearchInputProps<T = string> {

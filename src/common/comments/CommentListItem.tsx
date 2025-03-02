@@ -1,6 +1,6 @@
 import { TextBase, TextSM } from "../../designSystem/typography/Typography";
-import { truncateBody } from "../../helper";
-import { CommentEntity } from "../../types/comment";
+import { truncateBody } from "../../utils/helper";
+import { CommentEntity } from "../../utils/types/comment";
 
 interface CommentListItemProps {
   comment: CommentEntity;

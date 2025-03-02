@@ -1,8 +1,8 @@
 import { createContext, useState } from "react";
 import SearchInput from "./SearchInput";
 import SearchSuggestion from "./SearchSuggestion";
-import { SearchCriteria } from "../../types/searchCriteria";
-import { InputContextProps } from "../../types/input";
+import { SearchCriteria } from "../../utils/types/searchCriteria";
+import { InputContextProps } from "../../utils/types/input";
 import { createPromiseArray } from "./utils/netwrok";
 
 interface SearchProps {
