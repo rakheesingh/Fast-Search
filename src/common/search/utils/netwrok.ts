@@ -1,4 +1,4 @@
-import { SearchCriteria } from "../../types/searchCriteria";
+import { SearchCriteria } from "../../../types/searchCriteria";
 import { createSearchSuggestionsFromSearchResult } from "./helper";
 
 export function createPromiseArray(

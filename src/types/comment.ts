@@ -5,3 +5,8 @@ export interface CommentEntity {
     name: string;
     body: string;
 }
+
+export interface CommentListProps {
+    comments: CommentEntity[];
+  }
+  

@@ -1,6 +1,6 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import SearchContainer, { Search } from "./Search";
-import { createPromiseArray } from "./netwrok";
+import { createPromiseArray } from "./utils/netwrok";
 import "@testing-library/jest-dom";
 
 jest.mock("./helper", () => ({

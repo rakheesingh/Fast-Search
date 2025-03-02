@@ -3,7 +3,7 @@ import SearchInput from "./SearchInput";
 import SearchSuggestion from "./SearchSuggestion";
 import { SearchCriteria } from "../../types/searchCriteria";
 import { InputContextProps } from "../../types/input";
-import { createPromiseArray } from "./netwrok";
+import { createPromiseArray } from "./utils/netwrok";
 
 interface SearchProps {
   handleSearch: (search: string) => void;
@@ -17,8 +17,6 @@ export function Search({ handleSearch, searchAPIsByCriteria }: SearchProps) {
 
   const populateSearchSuggestions = async (searchQuery: string) => {
     if(searchQuery === "") {
-        clearSuggestions();
-        handleSearch(searchQuery);
         return;
     }
     const searchSuggestionByQuery: { [key: string]: unknown } = {};
@@ -37,6 +35,11 @@ export function Search({ handleSearch, searchAPIsByCriteria }: SearchProps) {
     setOpenSuggestionDropdown(false);
   }
 
+  const clearQuery = (searchQuery: string) => {
+    clearSuggestions();
+    handleSearch(searchQuery);
+  }
+
   const clearSuggestions = () => {
     setSearchSuggestionsByCategory({});
     closeSuggestionList();
@@ -47,6 +50,7 @@ export function Search({ handleSearch, searchAPIsByCriteria }: SearchProps) {
       <SearchInput
         performSearch={handleSearch}
         populateSearchSuggestions={populateSearchSuggestions}
+        clearQuery={clearQuery}
       />
       <SearchSuggestion
         open={openSuggestionDropdown}
